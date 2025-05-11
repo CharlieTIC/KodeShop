@@ -1,0 +1,41 @@
+#redes-sociales {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Color de fondo opcional */
+}
+
+#redes-sociales img {
+    width: 40px; /* Tamaño de los iconos */
+    margin: 0 10px;
+}
+
+/* Estilos para el footer */
+.footerPrincipal {
+    background-color: #07080C;
+    padding: 20px 0;
+}
+
+.footerSecundario {
+    background-color: #0F111D;
+    padding: 10px 0;
+}
+
+.footer a {
+    color: #3E869F;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    color: #09011b;
+    /* Blanco */
+}
+
+h5,
+h6 {
+    color: #FFFFFF;
+    /* Blanco */
+}
