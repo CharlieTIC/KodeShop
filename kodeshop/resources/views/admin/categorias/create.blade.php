@@ -18,8 +18,9 @@
 
             <div class="mb-4">
                 <x-label class="mb-2">
-                    Nombre
-                </x-label>
+                    Categoria
+                </x-label>                            
+                
                 <x-input class="w-full" placeholder="Ingrese el nombre de la categoria" name="nombre"
                     value="{{ old('nombre') }}" />
             </div>

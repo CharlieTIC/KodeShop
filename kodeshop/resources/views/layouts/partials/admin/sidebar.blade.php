@@ -7,18 +7,27 @@
                 'route' => route('dashboard'),
                 'active' => request()->routeIs('dashboard'),
             ],
-            [   //Categorias de productos
+            [
+                //Categorias de productos
                 'name' => 'Categorias',
                 'icon' => 'fa-solid fa-tags',
                 'route' => route('categorias.index'),
                 'active' => request()->routeIs('categorias.*'),
-],
-            [   //Subcategorias de productos
+            ],
+            [
+                //Subcategorias de productos
                 'name' => 'Subcategorias',
                 'icon' => 'fa-solid fa-tag',
                 'route' => route('subcategorias.index'),
                 'active' => request()->routeIs('subcategorias.*'),
-            ]
+            ],
+            [
+                //Productos
+                'name' => 'Productos',
+                'icon' => 'fa-solid fa-box',
+                'route' => route('productos.index'),
+                'active' => request()->routeIs('productos.*'),
+            ],
         ];
 
     @endphp
