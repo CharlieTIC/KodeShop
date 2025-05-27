@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -52,6 +53,7 @@ class ProductoController extends Controller
     public function edit(Producto $producto)
     {
         //
+        return view('admin.productos.edit', compact('producto'));
     }
 
     /**
@@ -67,6 +69,17 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        //Retornamos mensaje eliminar el producto
+       Storage::delete($producto->image_path);
+
+        $producto->delete();
+
+        session()->flash('swal',[
+            'icon' => 'success',
+            'title' => 'Eliminado',
+            'text' => 'El producto se ha eliminado correctamente'
+            
+        ]);
+       return redirect()->route('productos.index');
     }
 }

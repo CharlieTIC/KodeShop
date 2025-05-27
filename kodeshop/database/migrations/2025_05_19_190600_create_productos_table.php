@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('sku');
             $table->string('nombre');
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             $table->string('image_path');
             $table->float('precio');            
 

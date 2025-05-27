@@ -15,8 +15,8 @@
 
 
         <img class="aspect-[16/9] object-cover object-center" 
-            src="{{ $image ? $image->temporaryUrl() : asset('img/no-image.png') }}" 
-            alt="">
+     src="{{ $image ? $image->temporaryUrl() : Storage::url($productoEdit['image_path'] ?? '') }}" 
+     alt="">
     </figure>
 
     <x-validation-errors class="mb-4" />
@@ -29,7 +29,7 @@
             </x-label>
 
             <x-input 
-            wire:model="producto.sku" 
+            wire:model="productoEdit.sku" 
             class="w-full" 
             placeholder="Por favor ingrese el código del producto" />
         </div>
@@ -40,7 +40,7 @@
             </x-label>
 
             <x-input 
-            wire:model="producto.nombre" 
+            wire:model="productoEdit.nombre" 
             class="w-full" 
             placeholder="Por favor ingrese el nombre del producto" />
         </div>
@@ -51,7 +51,7 @@
                 </x-label>
 
                 <x-textarea
-                wire:model="producto.descripcion" 
+                wire:model="productoEdit.descripcion" 
                 class="w-full" 
                 placeholder="Por favor ingrese descripción del producto" />
 
@@ -65,7 +65,7 @@
             <x-input 
             type="number"
             step="0.01"
-            wire:model="producto.precio" 
+            wire:model="productoEdit.precio" 
             class="w-full" 
             placeholder="Por favor ingrese precio del producto" />
         </div>
@@ -103,10 +103,46 @@
                     @endforeach
                 </select>
             </div>
-
             <div class="flex justify-end">
-                <x-button type="submit">Crear Producto</x-button>
-
+                <x-danger-button onclick="confirmDelete()">
+                    Eliminar
+                </x-danger-button>
+                <x-button class="ml-2">
+                    Actualizar
+                </x-button>
+            </div>
     </div>
     </form>
+
+    <form action="{{ route('productos.destroy', $producto) }}" method="POST" id="delete-form">
+
+        @csrf
+
+        @method('DELETE')
+
+    </form>
+
+        @push('js')
+        <script>
+            function confirmDelete() {
+                Swal.fire({
+                    title: "¿Estás seguro?",
+                    text: "¡No podrás revertir esto!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "¡Sí, eliminar!",
+                    cancelButtonText: "Cancelar"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                       document.getElementById('delete-form').submit(); 
+                    }
+                        });
+                        
+                    }
+              
+        </script>
+    @endpush
+
 </div>
