@@ -28,6 +28,13 @@
                 'route' => route('productos.index'),
                 'active' => request()->routeIs('productos.*'),
             ],
+             [
+                //Portadas 
+                'name' => 'Portadas',
+                'icon' => 'fa-solid fa-images',
+                'route' => route('covers.index'),
+                'active' => request()->routeIs('covers.*'),
+            ],
         ];
 
     @endphp
