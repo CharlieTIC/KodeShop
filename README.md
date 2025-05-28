@@ -28,7 +28,7 @@ Asegúrate de tener instalado lo siguiente en tu máquina:
 
 1. Clona el repositorio:
 
-git clone https://github.com/tu-usuario/tu-repo.git
+git clone https://github.com/tu-usuario/tu-repo.git](https://github.com/CharlieTIC/KodeShop.git
 cd tu-repo
 
 2. Instala las dependencias de PHP:
