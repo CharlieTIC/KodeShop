@@ -18,7 +18,7 @@
         
    
     <div class="swiper-slide">
-    <img src="{{$cover->image}}" alt="" class="w-full aspect-[3/1] object-cover object-center">
+    <img src="{{ asset($cover->image) }}" alt="" class="w-full aspect-[3/1] object-cover object-center">
     </div>
 
      @endforeach
@@ -44,7 +44,7 @@
         @foreach ($ultimosProductos as $producto )
 
         <article class="bg-white shadow rounded overflow-hidden">
-        <img src="{{$producto->image}}" class="w-full h-48 object-cover object-center">
+         <img src="{{ asset($producto->image) }}" class="w-full h-48 object-cover object-center">
         
 
         <div class="p-4">

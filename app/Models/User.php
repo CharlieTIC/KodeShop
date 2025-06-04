@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -27,6 +28,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'last_name',
+        'document_type',
+        'document_number',
+        'phone',
         'email',
         'password',
     ];
@@ -63,5 +68,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function direcciones()
+    {
+        return $this->hasMany(Direcciones::class);
     }
 }
