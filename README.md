@@ -1,6 +1,6 @@
 # KodeShop
 
-Proyecto Back (Laravel) + Front (React)
+Proyecto Back (Laravel) + Front (Blade)
 # 📘 Laravel 12 Starter Project
 
 Este es un proyecto base desarrollado con **Laravel 12**, que utiliza las siguientes tecnologías integradas:
@@ -80,4 +80,4 @@ Este proyecto está licenciado bajo la licencia MIT. Puedes usarlo libremente pa
 
 👨‍💻 Autor
 
-Desarrollado por Tu Juan Carlos Flores Flores
+Desarrollado por Juan Carlos Flores Flores
